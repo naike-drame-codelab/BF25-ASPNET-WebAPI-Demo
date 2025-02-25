@@ -1,75 +1,48 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using Refuge.API.DTO;
+using Refuge.BLL.Enums;
+using Refuge.BLL.Interfaces.Services;
+using Refuge.DAL.Entities;
 
 namespace BookingManager.API.Controllers
 {
     [ApiController]
-    [Route("Cat")]
-    public class CatController : ControllerBase
+    [Route("api/Cat")]
+    public class CatController(ICatService catService) : ControllerBase
     {
-        static List<string> mockDb = new List<string> { "Miaouss", "Felix", "Garfield", "Duchesse" };
-
         [HttpGet]
-        public IActionResult Get([FromQuery] char letter)
+        public IActionResult Get([FromQuery] char letter, [FromQuery] CatColor color)
         {
-            return Ok(mockDb.Where(c => c.Contains(letter)));
+            return Ok(catService.SearchByLetterAndColor(letter, color));
         }
 
         [HttpGet("{id}")]
         public IActionResult Get([FromRoute] int id)
         {
-            try
-            {
-                return Ok(mockDb[id]);
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
+            return Ok();
+
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody][MaxLength(25)] string name)
+        public IActionResult Post([FromBody]CatFormDTO dto)
         {
-            if (mockDb.Contains(name))
-            {
-                ModelState.AddModelError("name", "The name must be unique.");
-                return BadRequest(ModelState);
-            }
-            mockDb.Add(name);
+            catService.Add(new Cat { Name = dto.Name, Color = dto.Color });
             return Created();
         }
 
         [HttpPut("{id}")]
         public IActionResult Put([FromRoute] int id, [FromBody][MaxLength(25)] string name)
         {
-            try
-            {
-                mockDb[id] = name;
-                return NoContent();
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
+            return Ok();
+
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete([FromRoute] int id)
         {
-            try
-            {
-                if (mockDb[id] != null)
-                {
-                    mockDb.RemoveAt(id);
-                }
-                return NoContent();
-            }
-            catch (Exception)
-            {
+            return Ok();
 
-                return NotFound();
-            }
         }
     }
 }

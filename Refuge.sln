@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refuge.API", "Refuge.API\Refuge.API.csproj", "{DDCF86D9-4286-4530-846E-73B0DD1B6EC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refuge.DAL", "Refuge.DAL\Refuge.DAL.csproj", "{4811D1AC-03F0-440B-8A59-A8F8F706E88F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refuge.BLL", "Refuge.BLL\Refuge.BLL.csproj", "{DA0662C8-A8AD-4DF9-9A52-9E5AF012E2E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DDCF86D9-4286-4530-846E-73B0DD1B6EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDCF86D9-4286-4530-846E-73B0DD1B6EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCF86D9-4286-4530-846E-73B0DD1B6EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4811D1AC-03F0-440B-8A59-A8F8F706E88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4811D1AC-03F0-440B-8A59-A8F8F706E88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4811D1AC-03F0-440B-8A59-A8F8F706E88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4811D1AC-03F0-440B-8A59-A8F8F706E88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0662C8-A8AD-4DF9-9A52-9E5AF012E2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0662C8-A8AD-4DF9-9A52-9E5AF012E2E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0662C8-A8AD-4DF9-9A52-9E5AF012E2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0662C8-A8AD-4DF9-9A52-9E5AF012E2E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
